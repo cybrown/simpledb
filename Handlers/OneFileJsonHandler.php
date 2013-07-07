@@ -1,7 +1,7 @@
 <?php
-namespace Cy\SimpleDB\Handlers;
+namespace Sigh\SimpleDB\Handlers;
 
-class OneFileJsonHandler implements \Cy\SimpleDB\PersistenceHandler
+class OneFileJsonHandler implements \Sigh\SimpleDB\PersistenceHandler
 {
 	private $path;
 	private $data = null;

@@ -1,5 +1,5 @@
 <?php
-namespace Cy\SimpleDB;
+namespace Sigh\SimpleDB;
 
 class Collection implements \ArrayAccess
 {

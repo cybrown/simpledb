@@ -1,5 +1,5 @@
 <?php
-namespace Cy\SimpleDB\Silex;
+namespace Sigh\SimpleDB\Silex;
 
 use Silex\Application;
 use Silex\ControllerProviderInterface;
