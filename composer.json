@@ -1,10 +1,15 @@
 {
-    "name": "cybrown/simpledb",
-    "description": "Todo list with hashtag support, and file based database.",
+    "name": "sigh/simpledb",
+    "description": "Simple flat file database, with json file support and Silex crud provider.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cy Brown",
+            "email": "cy@cybrown.fr"
+        }
+    ],
+    "minimum-stability": "stable",
     "require": {
-        "php": ">=5.3.0"
-    },
-    "autoload": {
-        "psr-0": {"Sigh\\SimpleDB": "src/"}
+
     }
 }
