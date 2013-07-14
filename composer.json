@@ -11,5 +11,8 @@
     "minimum-stability": "stable",
     "require": {
 
+    },
+    "autoload": {
+        "psr-0": {"Sigh\\SimpleDB": "src/"}
     }
 }
