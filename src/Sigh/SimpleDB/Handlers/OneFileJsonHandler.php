@@ -7,6 +7,7 @@ class OneFileJsonHandler implements \Sigh\SimpleDB\PersistenceHandler
 	private $data = null;
 	private $loaded = false;
 	private $fileExists = false;
+	private $prettyPrint = false;
 
 	private function createFile() {
 		if (!$this->fileExists) {
@@ -17,9 +18,10 @@ class OneFileJsonHandler implements \Sigh\SimpleDB\PersistenceHandler
 		$this->fileExists = true;
 	}
 
-	public function __construct($path)
+	public function __construct($path, $prettyPrint = false)
 	{
 		$this->path = $path;
+		$this->prettyPrint = $prettyPrint;
 	}
 
 	public function load()
@@ -34,7 +36,7 @@ class OneFileJsonHandler implements \Sigh\SimpleDB\PersistenceHandler
 
 	public function save()
 	{
-		file_put_contents($this->path, json_encode($this->data, JSON_PRETTY_PRINT));
+		file_put_contents($this->path, json_encode($this->data, $this->prettyPrint ? JSON_PRETTY_PRINT : 0));
 	}
 
 	public function loadForCollection($name)
