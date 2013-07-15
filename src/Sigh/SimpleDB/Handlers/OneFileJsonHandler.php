@@ -42,7 +42,7 @@ class OneFileJsonHandler implements \Sigh\SimpleDB\PersistenceHandler
 
     public function save()
     {
-        file_put_contents($this->path, json_encode($this->data, $this->prettyPrint ? JSON_PRETTY_PRINT : 0));
+        file_put_contents($this->path, json_encode($this->data, $this->prettyPrint && PHP_VERSION_ID > 50400 ? JSON_PRETTY_PRINT : 0));
     }
 
     public function loadForCollection($name)
