@@ -10,6 +10,12 @@ class OneFileJsonHandler implements \Sigh\SimpleDB\PersistenceHandler
     private $prettyPrint = false;
 
     private function createFile() {
+        $dirpath = dirname($this->path);
+        if (!is_dir($dirpath)) {
+            if (!mkdir($dirpath, 0, true)) {
+                throw new Exception("Can not create directory to database file: " . $this->path);
+            }
+        }
         if (!$this->fileExists) {
             if (!is_file($this->path)) {
                 file_put_contents($this->path, '');
@@ -36,12 +42,6 @@ class OneFileJsonHandler implements \Sigh\SimpleDB\PersistenceHandler
 
     public function save()
     {
-        $dirpath = dirname($this->path);
-        if (!is_dir($dirpath)) {
-            if (!mkdir($dirpath, 0, true)) {
-                throw new Exception("Can not create directory to database file: " . $this->path);
-            }
-        }
         file_put_contents($this->path, json_encode($this->data, $this->prettyPrint ? JSON_PRETTY_PRINT : 0));
     }
 
