@@ -12,7 +12,7 @@ class OneFileJsonHandler implements \Sigh\SimpleDB\PersistenceHandler
     private function createFile() {
         $dirpath = dirname($this->path);
         if (!is_dir($dirpath)) {
-            if (!mkdir($dirpath, 0, true)) {
+            if (!mkdir($dirpath, 0777, true)) {
                 throw new Exception("Can not create directory to database file: " . $this->path);
             }
         }
