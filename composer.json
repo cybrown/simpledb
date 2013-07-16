@@ -8,8 +8,10 @@
             "email": "cy@cybrown.fr"
         }
     ],
-    "minimum-stability": "stable",
     "require-dev": {
         "phpunit/phpunit": "*"
+	},
+    "autoload": {
+        "psr-0": {"Sigh\\SimpleDB": "src/"}
     }
 }
